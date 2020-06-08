@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item renders - item is set: item-is-set 1`] = `
+<div>
+  <a
+    href="http://localhost"
+    rel="noopener noreferrer nofollow"
+    target="_blank"
+  >
+    Lorem ipsum
+  </a>
+  <div>
+    <span>
+      2020-06-01
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Item renders - item not set: item-not-set 1`] = `""`;
