@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 const TerserPlugin = require('terser-webpack-plugin');
@@ -14,7 +14,7 @@ module.exports = merge(common, {
         path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'commonjs2',
     },
-    devtool: 'none',
+    devtool: false,
     externals: {
         react: 'commonjs react',
         'react-dom': 'commonjs react-dom',
