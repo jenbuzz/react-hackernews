@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+    web:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: 'react_hackernews'
+        ports:
+            - '8080:8080'
+        volumes:
+            - ./:/react-hackernews
+            - /react-hackernews/node_modules
