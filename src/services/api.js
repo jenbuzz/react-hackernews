@@ -24,6 +24,10 @@ const mapType = type => {
 const get = async id => {
     const result = await axios.get(`${baseUrl}/item/${id}.json`);
 
+    if (!result.data) {
+        return null;
+    }
+
     const filterFields = ({ id, url, time, title } = {}) => ({
         id,
         url,
@@ -37,9 +41,11 @@ const get = async id => {
 export const getAll = async (type, limit) => {
     const result = await axios.get(`${baseUrl}/${mapType(type)}.json`);
 
-    return await Promise.all(
+    const res = await Promise.all(
         result.data.splice(0, limit).map(async id => {
             return await get(id);
         }),
     );
+
+    return res.filter(item => item !== null);
 };
