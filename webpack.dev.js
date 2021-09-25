@@ -14,21 +14,23 @@ module.exports = merge(common, {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        static: path.join(__dirname, 'build'),
         compress: false,
         host: '0.0.0.0',
         port: 8080,
         open: true,
-        watchOptions: {
-            poll: true,
+        watchFiles: {
+            paths: ['src/**/*'],
+            options: {
+                usePolling: false,
+            },
         },
-        watchContentBase: true,
-        disableHostCheck: true,
+        allowedHosts: 'all',
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            inject: 'footer',
+            inject: 'body',
         }),
     ],
 });
