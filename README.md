@@ -1,5 +1,3 @@
-[![Build Status](https://secure.travis-ci.org/jenbuzz/react-hackernews.png?branch=master)](http://travis-ci.org/jenbuzz/ngx-metafrenzy)
-
 # react-hackernews
 
 Add a HackerNews feed to your React app.
