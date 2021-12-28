@@ -1,7 +1,10 @@
 .babelrc
+.dockerignore
 .vscode
 .eslintrc.json
 .prettierrc
+docker-compose.yml
+Dockerfile
 node_modules
 webpack.common.js
 webpack.dev.js
